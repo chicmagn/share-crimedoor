@@ -1,0 +1,68 @@
+{% extends "index.html" %}
+{% block header %}
+  <div class="header">
+    <div class="container">
+      <div class="grid">
+        <div class="page-wrapper">
+          <div class="nav-wrapper">
+           <nav class="navbar">
+             <img src="/static/image/logo.webp" alt="Company Logo">
+             <div class="menu-toggle" id="mobile-menu">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+             </div>
+             <ul class="nav no-search">
+               <li class="nav-item"><a href="https://crimedoor.com">ABOUT</a></li>
+               <li class="nav-item"><a href="/contact">Contact</a></li>
+               <li class="nav-item"><a href="https://crimedoor.com">RESOURCES</a></li>
+               <li class="nav-item"><a href="https://crimedoor.com">SIGN UP</a></li>
+             </ul>
+           </nav>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  {% block content %}{% endblock %}
+{% endblock %} 
+
+
+{% block footer %}
+  <div class="footer-wrapper container">
+    <div class="grid">
+      <div class="grid__item flex one-whole">
+        <div class="footer_heading grid__item one-whole">
+          <p class="pre_title">ABOUT</p>
+          <h1 class="title">An Innovative True Crime News App</h1>
+        </div>
+        <div class="footer_content">
+          <div class="video-text flex">
+            <div class="grid__item one-half">
+              <div class="video">
+                <iframe src='https://player.vimeo.com/video/492304313?wmode=opaque' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+              </div>
+            </div>
+            <div class="grid__item one-half">
+              <p>CrimeDoor is the first app of its kind. Our groundbreaking Augmented Reality technology accurately recreates crime scenes and allows users to experience and investigate them —just as detectives at the actual crime scenes did. Using CrimeDoor you can explore evidence, review thousands of case files, look into cold cases, and help unravel True Crime’s most notorious unsolved mysteries.</p>
+            </div>
+          </div>
+          
+          <div class="grid__item one-whole">
+            <ul>
+              <li>VIEW and share photos of real crime scenes.</li>
+              <li>LISTEN to True Crime podcasts.</li>
+              <li> WALK directly into crime scenes.</li>
+              <li>WATCH videos related to unsolved cases.</li>
+              <li>READ news articles about hundreds of cases.</li>
+              <li>HELP solve notorious cold cases.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+{% endblock %}

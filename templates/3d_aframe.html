@@ -1,0 +1,115 @@
+{% extends "blank_header.html" %}
+{% block title %}{{data.title}}{% endblock %}
+{% block meta %}{{data.description}}{% endblock %}
+{% block head_extra %}
+
+<!-- Facebook -->
+<meta name="og:url" content="{{data.share_url}}" />
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{{data.title}}" />
+<meta property="og:image" content="{{data.social_image|safe}}" />
+<meta property="og:image:secure" content="{{data.social_image|safe}}" />
+<meta property="og:description" content="{{data.description}}" />
+<meta property="og:site_name" content="CrimeDoor - {{data.title}}" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{data.title}}" />
+<meta name="twitter:description" content="{{data.description}}" />
+<meta name="twitter:site" content="@CrimeDoor" />
+<meta name="twitter:image" content="{{data.social_image|safe}}" />
+
+
+<meta name="title" content="{{data.title}}">
+<meta name="description" content="{{data.description}}">
+<meta name="thumbnail" content="{{data.thumbnail|safe}}">
+<meta name="original_image" content="{{data.original_image|safe}}">
+<meta name="social_image" content="{{data.social_image|safe}}">
+<meta name="file_name" content="{{data.embeded_url}}">
+<meta name="embeded_url" content="{{data.embeded_url}}">
+<meta name="doc_id" content="{{data.doc_id}}">
+
+
+<script type="text/javascript">
+function redirectAr(){
+	var url = '{{ data.file_url }}';
+	url = url.replace('&amp;', '&');
+	const linkToAR = 'https://webar.crimedoor.com/?url='+url;
+  	window.location.href = linkToAR;
+}
+</script>
+{% endblock head_extra %}
+{% block content %}
+<style>
+	.a-enter-ar.a-hidden {display: none!important;}
+	.a-enter-vr.a-hidden {display: none!important;}
+</style>
+<section>
+    <div class="header">
+        <div class="container">
+          <div class="grid">
+            <div class="grid__item page-wrapper">
+              <div class="nav-wrapper">
+               <nav class="navbar">
+                 <img src="{{ url_for('static', filename='image/title.png') }}" alt="Company Logo" class="ml-0">
+               </nav>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+</section>
+<section>
+    <div class="container object-template">
+        <div class="page-content">
+            <div class="heading">
+                <h1 class="text-center title">{{data.title}}</h1>
+            </div>
+            <div class="content">
+                <div class="object_model" style="position: relative;">
+                  <div id="model-img" style="background-image: url({{data.preview_image|safe}});background-repeat: no-repeat;background-attachment: scroll;background-size: contain; background-position: center; position: absolute;left:0;right:0;top:0;bottom:0;" />
+					<!-- <img
+						id="model-img"
+						src="{{data.original_image|safe}}" alt="{{data.title}}"
+						style="height: 100%; position: absolute; top: 0; left: 50%; transform: translate(-50%)" > -->
+					<!-- <img id="model-img" src="{{ data.photo }}" alt="{{data.title}}"> -->
+					<!-- <img id="model-img" src="{{ data.photo_url }}" alt="{{data.title}}"> -->
+                </div>
+                <!-- <a href="/question/{{data.doc_id}}">?</a> -->
+            </div>
+            <div class="footer">
+              <div class="top">
+                <!-- <a class="question" href="/question/{{data.doc_id}}">?</a> -->
+				<button onclick="redirectAr()" style="border: 1px solid red;padding: 7px;background-color: #00f7f8;width: 85px;height: 85px;font-size: 17px;border-radius: 50%;position: absolute;right: 20%;margin-top: -20px;">View in 3D</button>
+              </div>
+
+              <h1 class="text-center text-white pre-heading">About</h1>
+              <h4 class="text-center text-white heading">This Evidence</h4>
+                <p>{{data.details | replace('\n', '<br>') | safe }}</p>
+                <!-- <a class="white back_link" href="/profile/{{profile.id}}">Learn more</a> -->
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript">
+      let stringParams = window.location.search;
+      let searchParams = new URLSearchParams(stringParams)
+      if (searchParams.get('img') && searchParams.get('token')) {
+        // document.getElementById('model-img').src = searchParams.get('img') + '?token=' + searchParams.get('token')
+        document.getElementById('model-img').style.backgroundImage = 'url('+searchParams.get('img') + '&token=' + searchParams.get('token')+')'
+      }
+  </script>
+  <style>
+    @media screen and (max-width: 768px) {
+      .footer .top button {
+        right: 0!important;
+        margin-top: -50px!important;
+      }
+      .object-template .footer .top {
+        margin-top: 0!important;
+      }
+
+    }
+  </style>
+</section>
+
+{% endblock %}

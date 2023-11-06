@@ -1,0 +1,87 @@
+
+<form class="steps" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="">  
+    <!-- USER INFORMATION FIELD SET --> 
+    <fieldset>
+        <h2 class="fs-title">Profile Correction</h2>
+        <div class="hs_info field hs-form-field">
+            <label name="victim_name">Name of victim(s)?</label>
+            <input class="form-control" id="info" name="victim_name" data-rule-required="true">
+
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>
+        <div class="hs_fname field hs-form-field">
+            <label for="information_incorrect">What information is incorrect?</label>
+            <div class="radio">
+                <input id="radio-1" value="basic_information" name="information_incorrect" type="radio" checked>
+                <label for="radio-1" class="radio-label">Basic information</label>
+            </div>
+        
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-2" value="location" name="information_incorrect" type="radio">
+                <label  for="radio-2" class="radio-label">Location on map or directions</label>
+            </div>
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-3" value="Video" name="information_incorrect" type="radio">
+                <label  for="radio-3" class="radio-label">Video</label>
+            </div>
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-4" value="Article" name="information_incorrect" type="radio">
+                <label  for="radio-4" class="radio-label">Article</label>
+            </div>
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-5" value="Photo" name="information_incorrect" type="radio">
+                <label  for="radio-5" class="radio-label">Photo</label>
+            </div>
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-6" value="Podcast" name="information_incorrect" type="radio">
+                <label  for="radio-6" class="radio-label">Podcast</label>
+            </div>
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-7" value="Trial Footage" name="information_incorrect" type="radio">
+                <label  for="radio-7" class="radio-label">Trial Footage</label>
+            </div>
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-8" value="Reports" name="information_incorrect" type="radio">
+                <label  for="radio-8" class="radio-label">Reports</label>
+            </div>
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-8" value="Evidence" name="information_incorrect" type="radio">
+                <label  for="radio-8" class="radio-label">Evidence</label>
+            </div>
+        </div>
+        <div class="hs_fname field hs-form-field">
+            <label for="correct_information">What is the correct information?</label>
+            <textarea rows="5" cols="100" class="form-control" id="info" name="correct_information" data-rule-required="true"></textarea>
+
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>
+        
+      <!-- End Total Number of Constituents in Your Database Field -->
+      <input type="button" data-page="1" name="next" class="next action-button" value="Next" />
+    </fieldset>
+
+    <fieldset>
+        <div class="hs_info field hs-form-field">
+            <h2 class="fs-title">Additional Information</h2>
+            <label name="info">Is there any other information you would like to share with CrimeDoor?</label>
+            <textarea rows="5" cols="100" class="form-control" id="info" name="info" data-rule-required="true"></textarea>
+
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>
+     
+        <input type="button" data-page="2" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" data-page="2" name="next" class="next action-button" value="Next" />
+    </fieldset>
+  
+    <fieldset>
+        <h2 class="fs-title">Thank you for contacting CrimeDoor.</h2>
+        <h3 class="fs-subtitle">A CrimeDoor team member will contact you shortly regarding your submission.</h3>
+    </fieldset>
+</form>
+

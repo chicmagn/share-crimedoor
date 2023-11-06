@@ -1,0 +1,35 @@
+{% extends "header.html" %}
+{% block title %}Podcats{% endblock %} 
+{% block content %}
+
+<div class="container crime-list-template">
+    <div class="grid page-content">
+        {% if data %}
+        <h1 class="title">True Crime Case Podcats</h1>
+        <ul class="profiles">
+            
+            {% for podcast in data %}
+                <li>
+                    <div class="image">
+                        {% if podcast.image %}
+                            <img src={{podcast.image}}>
+                        {% else %}
+                            <img class="no-img" src="{{ url_for('static', filename='image/no-image.png') }}">
+                        {% endif %}
+                        
+                    </div>
+                    <div class="info">
+                        <h1 class="title uppercase"><a href="/podcasts/{{podcast.doc_id}}">{{podcast.title}}</a></h1>
+                        <p>{{podcast.description | truncate(200)}}</p>
+                        <p><a class="capitalize" href="/profile/{{podcast.profile_id}}">View profile</a></p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>    
+        {% else %}
+            <h1 class="not-found">No available datas.</h1>
+        {% endif %}
+       
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,23 @@
+{% extends "blank_header.html" %}
+{% block content %}
+<div class="container question-template">
+    <div class="page-content">
+        <a class="return_link" href="/3d/{{data.id}}">Back</a>
+        <div class="heading">
+            <h1 class="title">How To Use AR Evidence</h1>
+        </div>
+        <div class="content">
+            How To Use AR Evidence
+            This page uses augmented reality(AR) technology to let you examine evidence from a crime on your phone.
+            On the evidence page, swipe to spin the object in 3D space, or pinch to zoom in/out.
+            <img src="{{ url_for('static', filename='image/sample-1.gif') }}">
+            Try tapping the "View In AR" button to place the object in your room.
+            This will open your phone's camera so you can place the 3D evidence on the floor, or a tabletop.
+            While the evidence appears as semi-transparent on your screen, slowly move your camera around the room.
+            Once the scan is complete, the object will appear in your environment at full scale.
+            <img src="{{ url_for('static', filename='image/sample-2.gif') }}">
+        </div>  
+    </div>
+</div>
+{% endblock %}
+    

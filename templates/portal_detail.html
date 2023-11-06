@@ -1,0 +1,42 @@
+{% extends "header.html" %}
+{% block title %} True Crime Door: {{data.title}}{% endblock %}
+{% block content %}
+{% include 'modal.html' %}
+<div class="container portal-template">
+    <div class="page-content">
+        <div class="content">
+            <h1 class="hero bold text-center">True Crime Door</h1>
+            <a href="#badgesModal" class="modal_btn">
+                <div class="image photo mb-20">
+                    <img class="w-20" src={{data.banner}} alt="{{data.title}}">
+                </div>
+                <div class="detail">
+                    <h2 class="title bold text-center">{{data.title}}</h2>
+                    <p class="text-center">{{data.teaser}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="sticky bottom-bar">
+    <div class="content">
+        <p>Get the app!</p>
+        <div class="flex grid">
+            <div class="grid__item one-half">
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.crimedoor.app">
+                    <img style="width: 350px;"
+                        src="https://crimedoor.com/wp-content/uploads/2020/11/True-Crime-Andriod-Coming-Soon-Corner.png"
+                        alt="">
+                </a>
+            </div>
+            <div class="grid__item one-half">
+                <a target="_blank" href="https://apps.apple.com/us/app/crimedoor/id1529358461">
+                    <img style="width: 350px;"
+                        src="https://crimedoor.com/wp-content/uploads/2020/11/True-Crime-Iphone-available-now.png"
+                        alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,15 @@
+{% extends "header.html" %}
+{% block title %}   True Crime Video: {{data.title}} {% endblock %}
+{% block content %}
+{% include 'modal.html' %}
+<div class="container video-template">
+    <div class="page-content">
+        <h1 class="hero bold text-center">{{data.title}}</h1>
+        <h2 class="profile text-center">From the true crime case <a href=/profile/{{data.profile_id}}>{{profile.profile_name}}</a></h2>
+        <div class="content">
+            <iframe width="560" height="315" src="//www.youtube.com/embed/{{data.youtube_id}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

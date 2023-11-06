@@ -1,0 +1,30 @@
+<div class="heading">
+        <img src="{{ url_for('static', filename='image/contact_banner.jfif') }}">
+    </div>
+    <div class="page-content">
+        {% include 'contact_form_main.html' %}
+        <div id="everything" class="contact-form">
+            {% include 'contact_form_everything.html' %}
+        </div>
+        <div id="hr" class="contact-form">
+            {% include 'contact_form_hr.html' %}
+        </div>
+        <div id="partner" class="contact-form">
+            {% include 'contact_form_partner.html' %}
+        </div>
+        <div id="suggestion" class="contact-form">
+            {% include 'contact_form_profile.html' %}
+        </div>
+        <div id="correction" class="contact-form">
+            {% include 'contact_form_correction.html' %}
+        </div>
+        <div id="inquiry" class="contact-form">
+            {% include 'contact_form_inquiry.html' %}
+        </div>
+        <div id="member" class="contact-form">
+            {% include 'contact_form_menber.html' %}
+        </div>
+        <div id="content_profile" class="contact-form">
+            {% include 'contact_form_content.html' %}
+        </div>
+    </div>

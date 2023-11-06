@@ -1,0 +1,40 @@
+{% extends "header.html" %}
+{% block title %} {{profile.profile_name}} True Crime News: {{data.title}} {% endblock %}
+{% block content %}
+{% include 'modal.html' %}
+<div class="container article-template">
+    <div class="page-content">
+        <h1 class="hero bold text-center">{{data.title}}</h1>
+        {% if data.status %}
+            <div class="content">
+                <iframe id="article_frame" src="{{data.url}}"></iframe>
+            </div>
+        {% else %}
+        <div class="no-iframe flex h-200p">
+            <h3 class="m-auto">We're sorry this article is only available in the CrimeDoor App!</h3>
+        </div>
+        {% endif %} 
+    </div>
+</div>
+<div class="sticky bottom-bar">
+    <div class="content">
+        <p>Get the app!</p>
+        <div class="flex grid">
+            <div class="grid__item one-half">
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.crimedoor.app">
+                    <img style="width: 350px;"
+                        src="https://crimedoor.com/wp-content/uploads/2020/11/True-Crime-Andriod-Coming-Soon-Corner.png"
+                        alt="">
+                </a>
+            </div>
+            <div class="grid__item one-half">
+                <a target="_blank" href="https://apps.apple.com/us/app/crimedoor/id1529358461">
+                    <img style="width: 350px;"
+                        src="https://crimedoor.com/wp-content/uploads/2020/11/True-Crime-Iphone-available-now.png"
+                        alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

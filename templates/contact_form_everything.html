@@ -1,0 +1,73 @@
+
+<form class="steps" accept-charset="UTF-8" enctype="multipart/form-data" novalidate="">  
+    <!-- USER INFORMATION FIELD SET --> 
+    <fieldset>
+        <h2 class="fs-title">Additional Information</h2>
+        <div class="hs_info field hs-form-field">
+            
+            <label name="info">Is there any other information you would like to share with CrimeDoor?</label>
+            <textarea rows="5" cols="100" class="form-control" id="info" name="info" data-rule-required="true"></textarea>
+
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>
+     
+      <!-- End Total Number of Constituents in Your Database Field -->
+      <input type="button" data-page="1" name="next" class="next action-button" value="Next" />
+    </fieldset>
+
+    <!-- ACQUISITION FIELD SET -->  
+    <fieldset>
+        <h2 class="fs-title">Contact Information</h2>
+        <div class="hs_fname field hs-form-field">
+            <label for="f_name">First Name</label>
+            <input type="text" name="f_name" class="form-control" data-rule-required="true">
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>
+        <div class="hs_fname field hs-form-field">
+            <label for="l_name">Last Name</label>
+            <input type="text" id="l_name" name="l_name" class="form-control" data-rule-required="true">
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>
+        <div class="hs_fname field hs-form-field">
+            <label for="method">How would you prefer CrimeDoor contact you?</label>
+            <div class="radio">
+                <input id="radio-1" value="email" name="method" type="radio" checked>
+                <label for="radio-1" class="radio-label">Email</label>
+            </div>
+        
+            <div class="radio hs_fname field hs-form-field">
+                <input id="radio-2" value="phone" name="method" type="radio">
+                <label  for="radio-2" class="radio-label">Phone</label>
+            </div>
+        </div>
+        <div class="hs_fname field hs-form-field">
+            <label for="email">Email Address</label>
+            <input type="text" name="email" class="form-control" data-rule-required="true">
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>
+        <div class="hs_fname field hs-form-field">
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" class="form-control" data-rule-required="true">
+            <span class="error1" style="display: none;">
+                <i class="error-log fa fa-exclamation-triangle"></i>
+            </span>
+        </div>
+        <input type="button" data-page="2" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" data-page="2" name="next" class="next action-button" value="Next" />
+    </fieldset>
+
+  
+    <fieldset>
+        <h2 class="fs-title">Thank you for contacting CrimeDoor.</h2>
+        <h3 class="fs-subtitle">A CrimeDoor team member will contact you shortly regarding your submission.</h3>
+    </fieldset>
+</form>
+

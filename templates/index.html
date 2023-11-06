@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{%block meta%}{%endblock%}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css">
+    <!-- <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('uvwr9m/crimedoor-editor');</script> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/flickity.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/theme.min.css') }}">
+    <style>
+        .m-auto {
+            margin: auto;
+        }
+        .h-200p {
+            height: 200px !important;
+        }
+        .no-iframe h3 {
+            color: #ffffff;
+        }
+    </style>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.min.js"
+        integrity="sha512-lQR9pLx+zmyQV/T99+vuBITpGAYXR+nMAZXVjtdEgnC3jodfmtjhRTuAnQ7jHjlWgUL0KE+SORFWdWEp1BYLFw=="
+        crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-85YWTKD5YL"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDVu4ZjuyPf8s-uhRPP6RGLfczaLF8hJQY&callback=initMap' async
+    defer></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-85YWTKD5YL');
+    </script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js"></script>
+    {% endblock %}
+
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJSRKTD" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="loading-section hide">
+        <div class="loader">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section>
+        <div id="content" class="newTheme">
+            {% block header %}{% endblock %}
+
+        </div>
+    </section>
+    <footer>
+        {% block footer %}{% endblock %}
+    </footer>
+    <section class="loading-section hide">
+        <div class="loader">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="{{ url_for('static', filename='js/flickity.pkgd.min.js') }}"></script>
+
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+
+
+</body>
+
+</html>

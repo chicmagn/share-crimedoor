@@ -1,0 +1,36 @@
+{% extends "header.html" %}
+{% block content %}
+<title>True Crime Cases</title>
+<div class="container crime-list-template">
+    <div class="grid page-content">
+        <h1 class="title capitalize">True Crime case profiles</h1>
+        <ul class="profiles">
+            {% for profile in data.profiles %}
+            <li>
+                <div class="image">
+                    {% if profile.img_url %}
+                        <img src={{profile.img_url}}>
+                    {% else %}
+                        <img class="no-img" src="{{ url_for('static', filename='image/no-image.png') }}">
+                    {% endif %}
+                    
+                </div>
+                <div class="info">
+                    <h1 class="title uppercase"><a href="/profile/{{profile.profile_id}}">{{profile.profile_name}}</a></h1>
+                    <p>{{profile.profile_teaser}}</p>
+                    <p class="tags">
+                        Tags : 
+                        {% if profile.tags %}
+                            {% for tag in profile.tags %}
+                                <a href="/tags/{{tag}}">{{tag}}</a>{% if loop.index < profile.count%}, {% endif %}
+                            {% endfor %}  
+                        {% endif %}
+                    </p>
+                    <p class="tags">{{profile.causeofdeath}} : {{profile.dateofcrime}}</p>
+                </div>
+            </li>
+            {% endfor %}
+            </ul>
+    </div>
+</div>
+{% endblock %} 

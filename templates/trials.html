@@ -1,0 +1,85 @@
+{% extends "header.html" %}
+{% block content %}
+<title>Trials</title>
+{% include 'modal.html' %}
+<div class="container profile-template">
+  {% block video_text_right %}
+  <div class="grid video-text-section right-side">
+    <div class="grid__item seven-twelfths medium-down--one-whole">
+      <div class="info">
+        <div class="avastar">
+          <img src={{data.img_url}}>
+        </div>
+        <h1 class="title uppercase">{{data.profile_name}}</h1>
+        <h2>
+          {% if data.profile_story %}
+          {{data.profile_story | truncate(250)}}
+          {% endif %}
+        </h2>
+        <a href="https://crimedoor.com/">link</a>
+      </div>
+    </div>
+    <div class="grid__item five-twelfths medium-down--one-whole">
+      <div class="video">
+        <embed class="h-100" src="https://www.youtube.com/v/{{data.videos[1].youtube_id}}"
+                        type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+  <div class="grid map-section">
+    <div class="grid_item one-whole">
+      <div id="map" class="mt-3" style="height: 400px;"></div>
+    </div>
+  </div>
+  {% block video_carousel %}
+  {% if data.trials %}
+    <div class="grid video-carousel-section">
+      <h3 class="title">Trials</h3>
+      <div class="video-carousel">
+        {% for item in data.trials %}
+        <div class="grid__item one-quarter medium-down--one-whole gallery-cell">
+          <div class="thumbnail">
+            <a href="#badgesModal" class="modal_btn">
+              <div class="image">
+                <img src='https://img.youtube.com/vi/{{item.youtube_id}}/hqdefault.jpg'>
+              </div>
+              <!-- <div class="image video">
+                <embed class="h-100" src="https://www.youtube.com/v/{{item.youtube_id}}"
+                            type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always">
+              </div> -->
+              {% if item.title or item.description %}
+                <div class="detail">
+                  <p class="title">{{item.title}}</p>
+                  <p>{{item.description | truncate(100)}}</p>
+                </div>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  
+  {% endblock %}
+</div>
+
+<script>
+  
+  window.initMap = function () {
+    let data = {{ data | tojson}};
+    console.log("data", data)
+    lat = data.location.latitude
+    lng = data.location.longitude
+    myCenter = new google.maps.LatLng(lat, lng);
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: myCenter,
+      zoom: 8
+    });
+    marker = new google.maps.Marker({ position: myCenter });
+    marker.setMap(map)
+  }
+</script>
+
+{% endblock %} 

@@ -1,0 +1,58 @@
+{% extends "blank_header.html" %}
+{% block content %}
+<section>
+    <div class="header">
+        <div class="container">
+          <div class="grid">
+            <div class="grid__item page-wrapper">
+              <div class="nav-wrapper">
+               <nav class="navbar">
+                 <img src="{{ url_for('static', filename='image/title.png') }}" alt="Company Logo">
+               </nav>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+</section>
+<section>
+    <div class="container object-template">
+        <div class="page-content">
+            <div class="heading">
+                <h1 class="text-center title">{{data.title}}</h1>
+            </div>
+            <div class="content">
+                <div class="object_model">
+                  <model-viewer src="{{ data.file_url }}" alt="{{data.title}}" ar ar-modes="webxr scene-viewer quick-look" {% if data.vertical == "true"  %}field-of-view="30deg" max-camera-orbit="Infinity 90deg auto" {% endif %} environment-image="neutral" camera-controls pan-y availableAnimations autoplay >
+                    <button slot="ar-button" 
+                      style="    
+                        background-color: transparent;
+                        border: none;
+                        position: absolute;
+                        top: auto;
+                        right: 0;
+                        bottom: 0;
+                        width: 50px;
+                      ">
+                      <img src="{{url_for('static', filename='image/ARview.png')}}">
+                    </button>
+                  </model-viewer>
+                </div>
+                <!-- <a href="/question/{{data.doc_id}}">?</a> -->
+            </div>  
+            <div class="footer">
+              <div class="top">
+                <!-- <a class="question" href="/question/{{data.doc_id}}">?</a> -->
+              </div>
+              <a class="goto-bottom"><img src="{{url_for('static', filename='image/arrow.png')}}"></a>
+              <h1 class="text-center text-white pre-heading">About</h1>
+              <h4 class="text-center text-white heading">This Evidence</h4>
+                <p>{{data.details | replace('\n', '<br>') | safe }}</p>
+                <a class="white back_link" href="/profile/{{profile.id}}">Learn more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+    

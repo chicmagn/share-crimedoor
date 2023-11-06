@@ -1,0 +1,47 @@
+{% extends "blank_header.html" %}
+{% block title %}{{data.title}}{% endblock %}
+{% block meta %}{{data.description}}{% endblock %}
+{% block head_extra %}
+
+<!-- Facebook -->
+<meta name="og:url" content="{{data.share_url}}" />
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{{data.title}}" />
+<meta property="og:image" content="{{data.social_image|safe}}" />
+<meta property="og:image:secure" content="{{data.social_image|safe}}" />
+<meta property="og:description" content="{{data.description}}" />
+<meta property="og:site_name" content="CrimeDoor - {{data.title}}" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{data.title}}" />
+<meta name="twitter:description" content="{{data.description}}" />
+<meta name="twitter:site" content="@CrimeDoor" />
+<meta name="twitter:image" content="{{data.social_image|safe}}" />
+
+
+<meta name="title" content="{{data.title}}">
+<meta name="description" content="{{data.description}}">
+<meta name="thumbnail" content="{{data.thumbnail|safe}}">
+<meta name="original_image" content="{{data.original_image|safe}}">
+<meta name="social_image" content="{{data.social_image|safe}}">
+<meta name="file_name" content="{{data.embeded_url}}">
+<meta name="embeded_url" content="{{data.embeded_url}}">
+<meta name="doc_id" content="{{data.doc_id}}">
+<script type="text/javascript">
+	function escapeRegExp(string) {
+	return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+	}
+
+	function replaceAll(str, find, replace) {
+	return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+	}
+
+	var poster_url = "{{data.redirect_url|safe}}";
+	window.location.href=poster_url
+</script>
+{% endblock %}
+
+{% block content %}
+<p>Redirecting...</p>
+{% endblock %}

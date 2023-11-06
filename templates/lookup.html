@@ -1,0 +1,36 @@
+{% extends "header.html" %}
+{% block title %} True Crime Door: {{data.type}}{% endblock %}
+{% block content %}
+{% include 'modal.html' %}
+<div class="container portal-template video-template">
+    <div class="page-content">
+        {% if data.status %}
+            <div class="content">
+                <a href="/profile/{{data.data.profile_id}}"><h1 class="hero bold text-center">{{data.profile.profile_name}}</h1></a>
+                <a href="#badgesModal" class="modal_btn">
+                    <div class="image photo mb-20">
+                        {% if data.data.image %}
+                        <img class="w-20" src={{data.data.image}} alt="{{data.title}}">
+                        {% elif data.data.banner %}
+                        <img class="w-20" src={{data.data.banner}} alt="{{data.title}}">
+                        {% elif data.data.youtube_id %}
+                        <div class="content">
+                            <iframe width="560" height="315" src="//www.youtube.com/embed/{{data.data.youtube_id}}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="detail">
+                        <h2 class="title bold text-center">{{data.data.title}}</h2>
+                        <p class="text-center">{{data.data.type}}</p>
+                    </div>
+                </a>
+            </div>
+        {% else %}
+            <div class="content">
+                <h1 class="hero bold text-center">{{data.message}}</h1>
+            </div>
+        {% endif %}
+        
+    </div>
+</div>
+{% endblock %} 

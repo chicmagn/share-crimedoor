@@ -1,0 +1,21 @@
+{% extends "header.html" %}
+{% block title %}True Crime Cases Articles {% endblock %}
+{% block content %}
+
+<div class="container crime-list-template">
+    <div class="grid page-content infinite" data-type="articles" data-page_num="1">
+        <h1 class="title">True Crime Articles</h1>
+        <ul class="tags_list page">
+            {% for article in data %}
+                <li class="grid__item one-whole">
+                    <a class="capitalize" href="/articles/{{article.id}}">{{article.title}}</a>
+                    <a class="light capitalize" href="/profile/{{article.profile_id}}">View profile</a>
+                    <hr>
+                </li>
+            {% else %}
+            <h1 class="not-found">No available datas.</h1>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %} 
